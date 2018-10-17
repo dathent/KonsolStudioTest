@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Swatches::css/swatches.css"/>
+    </head>
+    <body>
+        <referenceContainer name="content">
+            <block class="KonsolStudio\Test\Block\Product\View\Configurable" name="parent.configurable.product" template="KonsolStudio_Test::product/view/configurable.phtml" before="product.info.details" >
+                <block class="Magento\Framework\View\Element\RendererList" name="parent.configurable.product.type.details.renderers" as="details.renderers">
+                    <block class="Magento\Swatches\Block\Product\Renderer\Listing\Configurable" name="details.renderers.configurable" as="configurable" template="Magento_Swatches::product/listing/renderer.phtml" ifconfig="catalog/frontend/show_swatches_in_product_list" />
+                </block>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
